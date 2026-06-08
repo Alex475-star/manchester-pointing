@@ -6,3 +6,4 @@ dist/
 *.log
 .manus-logs/
 .manus/
+.project-config.json
