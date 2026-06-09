@@ -20,7 +20,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container flex items-center justify-between py-4">
-          <div className="text-2xl font-bold text-primary">Manchester Pointing</div>
+          <div className="text-2xl font-bold text-primary">Manchester Pointing Services</div>
           <div className="hidden md:flex gap-8">
             <a href="#services" className="hover:text-primary transition-colors">
               Services
@@ -35,7 +35,7 @@ export default function Home() {
               Contact
             </a>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">Get Quote</Button>
+          <a href="#contact"><Button className="bg-primary hover:bg-primary/90">Get Quote</Button></a>
         </div>
       </nav>
 
@@ -50,20 +50,24 @@ export default function Home() {
                   Domestic Pointing Specialists
                 </p>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-6xl md:text-7xl font-bold leading-tight">
                 Expert Domestic Pointing for Your Home
               </h1>
-              <p className="text-lg text-foreground/70 leading-relaxed max-w-lg">
+              <p className="text-xl text-foreground/70 leading-relaxed max-w-lg">
                 Professional brick pointing and repointing services for domestic properties across Manchester. We specialise in restoring and maintaining residential brickwork with meticulous attention to detail and traditional craftsmanship.
               </p>
               <div className="flex gap-4 pt-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Request Free Survey
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  View Our Work
-                </Button>
+                <a href="#contact">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    Request Free Survey
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+                <a href="#gallery">
+                  <Button size="lg" variant="outline">
+                    View Our Work
+                  </Button>
+                </a>
               </div>
             </div>
 
