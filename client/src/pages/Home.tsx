@@ -403,23 +403,41 @@ export default function Home() {
             </div>
           </div>
 
-          <form className="max-w-2xl mx-auto bg-background text-foreground p-8 rounded-lg space-y-4">
+          <form
+            action="https://formspree.io/f/info@manchesterpointing.co.uk"
+            method="POST"
+            className="max-w-2xl mx-auto bg-background text-foreground p-8 rounded-lg space-y-4"
+          >
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
+              required
               className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              required
+              className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Your Phone Number"
               className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <textarea
+              name="message"
               placeholder="Tell us about your project"
               rows={4}
+              required
               className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+            <input type="hidden" name="_subject" value="New enquiry from Manchester Pointing website" />
+            <input type="hidden" name="_next" value="https://manchesterpointing.co.uk" />
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
               Request Free Survey
             </Button>
           </form>
