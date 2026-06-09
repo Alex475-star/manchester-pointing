@@ -404,7 +404,7 @@ export default function Home() {
           </div>
 
           <form
-            action="https://formspree.io/f/info@manchesterpointing.co.uk"
+            action="https://formspree.io/f/meewkkqe"
             method="POST"
             className="max-w-2xl mx-auto bg-background text-foreground p-8 rounded-lg space-y-4"
           >
