@@ -393,7 +393,7 @@ export default function Home() {
             <div className="text-center">
               <Phone className="h-8 w-8 mx-auto mb-4 opacity-80" />
               <h3 className="font-bold mb-2">Phone</h3>
-              <p className="opacity-90">07376 100 510</p>
+              <a href="tel:07376100510" className="opacity-90 hover:opacity-100 underline">07376 100 510</a>
             </div>
             <div className="text-center">
               <Mail className="h-8 w-8 mx-auto mb-4 opacity-80" />
