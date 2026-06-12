@@ -20,7 +20,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container flex items-center justify-between py-4">
-          <a href="#" className="flex items-center"><img src="/logo.svg" alt="Manchester Pointing Services" className="h-20 md:h-24 w-auto" /></a>
+          <a href="#" className="flex items-center"><img src="/logo.svg" alt="Manchester Pointing Services" className="h-24 md:h-28 w-auto" /></a>
           <div className="hidden md:flex gap-8">
             <a href="#services" className="hover:text-primary transition-colors">
               Services
