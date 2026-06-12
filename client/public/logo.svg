@@ -30,5 +30,5 @@
 
   <line x1="190" y1="145" x2="214" y2="145" stroke="#32434D" stroke-width="2"/>
   <text x="224" y="151" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#32434D" letter-spacing="2">MASONRY COMPANY</text>
-  <line x1="446" y1="145" x2="470" y2="145" stroke="#32434D" stroke-width="2"/>
+  <line x1="408" y1="145" x2="432" y2="145" stroke="#32434D" stroke-width="2"/>
 </svg>
