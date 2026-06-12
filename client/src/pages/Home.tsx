@@ -16,11 +16,16 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Diagonal corner stripe accent - top right, in line with logo */}
+      <div className="absolute top-0 right-0 w-56 h-56 md:w-72 md:h-72 overflow-hidden pointer-events-none z-[60]" aria-hidden="true">
+        <div className="absolute -top-28 -right-28 w-[440px] h-20 bg-primary rotate-45 origin-center"></div>
+        <div className="absolute -top-16 -right-28 w-[440px] h-24 rotate-45 origin-center" style={{ backgroundColor: '#32434D' }}></div>
+      </div>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container flex items-center justify-between py-4">
-          <a href="#" className="flex items-center"><img src="/logo.svg" alt="Manchester Pointing Services" className="h-12 md:h-14 w-auto" /></a>
+          <a href="#" className="flex items-center"><img src="/logo.svg" alt="Manchester Pointing Services" className="h-16 md:h-20 w-auto" /></a>
           <div className="hidden md:flex gap-8">
             <a href="#services" className="hover:text-primary transition-colors">
               Services
@@ -41,11 +46,6 @@ export default function Home() {
 
       {/* Hero Section - Offset Layout */}
       <section className="relative overflow-hidden">
-        {/* Diagonal corner stripe accent */}
-        <div className="absolute top-0 right-0 w-64 h-64 md:w-80 md:h-80 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-24 -right-24 w-96 h-24 bg-primary rotate-45 origin-center"></div>
-          <div className="absolute -top-12 -right-24 w-96 h-24 rotate-45 origin-center" style={{ backgroundColor: '#32434D' }}></div>
-        </div>
         <div className="container py-20 md:py-32 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Text Content */}
