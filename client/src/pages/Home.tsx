@@ -17,15 +17,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-      {/* Diagonal corner stripe accent - top right, in line with logo */}
-      <div className="absolute top-0 right-0 w-56 h-56 md:w-72 md:h-72 overflow-hidden pointer-events-none z-[60]" aria-hidden="true">
-        <div className="absolute -top-28 -right-28 w-[440px] h-20 bg-primary rotate-45 origin-center"></div>
-        <div className="absolute -top-16 -right-28 w-[440px] h-24 rotate-45 origin-center" style={{ backgroundColor: '#32434D' }}></div>
-      </div>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container flex items-center justify-between py-4">
-          <a href="#" className="flex items-center"><img src="/logo.svg" alt="Manchester Pointing Services" className="h-16 md:h-20 w-auto" /></a>
+          <a href="#" className="flex items-center"><img src="/logo.svg" alt="Manchester Pointing Services" className="h-20 md:h-24 w-auto" /></a>
           <div className="hidden md:flex gap-8">
             <a href="#services" className="hover:text-primary transition-colors">
               Services
@@ -40,7 +35,7 @@ export default function Home() {
               Contact
             </a>
           </div>
-          <a href="#contact"><Button className="bg-primary hover:bg-primary/90">Get Quote</Button></a>
+          <a href="#contact" className="hidden md:block"><Button className="bg-primary hover:bg-primary/90">Get Quote</Button></a>
         </div>
       </nav>
 
