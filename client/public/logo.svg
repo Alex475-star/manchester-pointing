@@ -1,0 +1,34 @@
+<svg width="520" height="180" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Manchester Pointing Masonry Company">
+  <defs>
+    <clipPath id="houseClip">
+      <path d="M44,156 L44,92 L104,34 L156,86 L156,156 Z"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#houseClip)">
+    <rect x="40" y="80" width="38" height="16" fill="#BC5838"/>
+    <rect x="81" y="80" width="38" height="16" fill="#BC5838"/>
+    <rect x="122" y="80" width="38" height="16" fill="#BC5838"/>
+    <rect x="40" y="99" width="17" height="16" fill="#BC5838"/>
+    <rect x="60" y="99" width="38" height="16" fill="#BC5838"/>
+    <rect x="101" y="99" width="38" height="16" fill="#BC5838"/>
+    <rect x="142" y="99" width="18" height="16" fill="#BC5838"/>
+    <rect x="40" y="118" width="38" height="16" fill="#BC5838"/>
+    <rect x="81" y="118" width="38" height="16" fill="#BC5838"/>
+    <rect x="122" y="118" width="38" height="16" fill="#BC5838"/>
+    <rect x="40" y="137" width="17" height="19" fill="#BC5838"/>
+    <rect x="60" y="137" width="38" height="19" fill="#BC5838"/>
+    <rect x="101" y="137" width="38" height="19" fill="#BC5838"/>
+    <rect x="142" y="137" width="18" height="19" fill="#BC5838"/>
+  </g>
+
+  <path d="M44,156 L44,92 L104,34 L144,74 L144,56 L156,56 L156,86 L156,156"
+    fill="none" stroke="#32434D" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <text x="190" y="78" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#32434D" letter-spacing="2">MANCHESTER</text>
+  <text x="190" y="122" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#BC5838" letter-spacing="9">POINTING</text>
+
+  <line x1="190" y1="145" x2="214" y2="145" stroke="#32434D" stroke-width="2"/>
+  <text x="224" y="151" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#32434D" letter-spacing="3">MASONRY COMPANY</text>
+  <line x1="406" y1="145" x2="430" y2="145" stroke="#32434D" stroke-width="2"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Manchester Pointing icon">
+  <defs>
+    <clipPath id="houseClipIcon">
+      <path d="M40,168 L40,86 L100,24 L160,86 L160,168 Z"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#houseClipIcon)">
+    <rect x="36" y="74" width="44" height="20" fill="#BC5838"/>
+    <rect x="83" y="74" width="44" height="20" fill="#BC5838"/>
+    <rect x="130" y="74" width="44" height="20" fill="#BC5838"/>
+    <rect x="36" y="97" width="20" height="20" fill="#BC5838"/>
+    <rect x="59" y="97" width="44" height="20" fill="#BC5838"/>
+    <rect x="106" y="97" width="44" height="20" fill="#BC5838"/>
+    <rect x="153" y="97" width="21" height="20" fill="#BC5838"/>
+    <rect x="36" y="120" width="44" height="20" fill="#BC5838"/>
+    <rect x="83" y="120" width="44" height="20" fill="#BC5838"/>
+    <rect x="130" y="120" width="44" height="20" fill="#BC5838"/>
+    <rect x="36" y="143" width="20" height="25" fill="#BC5838"/>
+    <rect x="59" y="143" width="44" height="25" fill="#BC5838"/>
+    <rect x="106" y="143" width="44" height="25" fill="#BC5838"/>
+    <rect x="153" y="143" width="21" height="25" fill="#BC5838"/>
+  </g>
+
+  <path d="M40,168 L40,86 L100,24 L146,70 L146,50 L160,50 L160,86 L160,168"
+    fill="none" stroke="#32434D" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
