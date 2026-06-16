@@ -224,51 +224,31 @@ export default function Home() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex gap-4 mb-12 border-b border-border pb-4">
-            {["all", "terraced", "detached", "period"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 font-semibold transition-colors ${
-                  activeTab === tab
-                    ? "text-primary border-b-2 border-primary -mb-4 pb-2"
-                    : "text-foreground/60 hover:text-foreground"
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
+          <div className="hidden">
+            {["all"].map((tab) => (
+              <button key={tab} onClick={() => setActiveTab(tab)}>{tab}</button>
             ))}
           </div>
 
-          {/* Masonry Grid */}
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            <div className="break-inside-avoid">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/gallery-wall-73ukjQujTUUHg7CTyjnqWs.webp"
-                alt="Completed brick wall repointing"
-                className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              />
+          {/* Uniform Project Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img src="/gallery/job-1.webp" alt="Natural stone barn conversion repointing" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
             </div>
-            <div className="break-inside-avoid">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/gallery-terraced-home-CKMAyhnb8AeDGwFYPkM7Uk.webp"
-                alt="Victorian terraced house repointing"
-                className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              />
+            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img src="/gallery/job-2.webp" alt="Detached property repointing and brickwork" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
             </div>
-            <div className="break-inside-avoid">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/gallery-detached-property-JtpYbTk5AWt8VRSKKNbWnc.webp"
-                alt="Detached home brick repointing"
-                className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              />
+            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img src="/gallery/job-3.webp" alt="Stone house repointing with scaffolding" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
             </div>
-            <div className="break-inside-avoid">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/gallery-period-property-N2Zz5PRYwCEn5iiCSHwF9K.webp"
-                alt="Period property heritage brick pointing"
-                className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-              />
+            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img src="/gallery/job-4.webp" alt="Apartment block brickwork restoration" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img src="/gallery/job-5.webp" alt="Semi-detached red brick repointing" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img src="/gallery/job-6.webp" alt="Garden wall brickwork and repointing" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
