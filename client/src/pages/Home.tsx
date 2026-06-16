@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronRight, MapPin, Phone, Mail, Star } from "lucide-react";
+import { ChevronRight, MapPin, Phone, Mail, Star, X } from "lucide-react";
 import { useState } from "react";
 
 /**
@@ -14,6 +14,53 @@ import { useState } from "react";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
+  const [openService, setOpenService] = useState<number | null>(null);
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+
+  const services = [
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-repointing-UtFXzZuTDTVg8QTQ7dxLLE.webp",
+      alt: "Before and after repointing",
+      title: "Brick Repointing",
+      desc: "Restore deteriorated mortar joints on your home with precision. We match original mortar specifications to maintain your property's character and durability.",
+      detail: "Over time, weather and age cause mortar joints to crack, crumble and fall away, letting damp into the wall behind. We carefully rake out the old, failed mortar to a sound depth and repoint by hand using a mix matched to your property's age and original finish. The result is a weathertight wall that looks right and protects your brickwork for decades to come.",
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-chimney-4x5dqWBKtK7aaSFw7tqJpu.webp",
+      alt: "Chimney repointing on rooftop",
+      title: "Chimney Repointing",
+      desc: "Expert chimney repointing and maintenance for domestic properties. We ensure your chimney is safe, weatherproof, and structurally sound.",
+      detail: "Chimneys take the worst of the weather, so they're often the first part of a house to need attention. We repoint the brickwork and rebuild where needed, reseal around the flaunching and pots, and leave everything sound and watertight. Catching it early stops damp tracking down into the rooms below and avoids far costlier repairs later on.",
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-crack-stitch-LRN8YNXtvr9beUKJM3zpRb.png",
+      alt: "Crack stitch repair installation",
+      title: "Crack Stitch Repairs",
+      desc: "Professional crack stitch repairs to stabilise and repair structural cracks in brickwork. Prevents further deterioration and restores wall integrity.",
+      detail: "Cracks in brickwork are usually a sign of movement, and left alone they only get worse. We install stainless steel helical bars bedded into the mortar joints across the crack, knitting the wall back together and spreading the load. It's a discreet, permanent fix that restores strength without the upheaval and cost of major rebuilding.",
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-brick-replacement-BDSds2XjF64YwmGvzFUaC9.png",
+      alt: "Professional brick replacement",
+      title: "Brick Replacements",
+      desc: "Expert brick replacement and matching services. We source period-appropriate bricks to seamlessly integrate with your existing brickwork.",
+      detail: "Spalled, cracked or frost-damaged bricks don't just look poor — they let water into the wall. We cut out the damaged bricks and replace them with reclaimed or closely matched new ones, so the repair blends into the surrounding brickwork rather than standing out. Ideal for period and traditional homes where keeping the original character matters.",
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-waterproof-sealant-DjYPoKxfNfr9FVtwCjPL5o.png",
+      alt: "Waterproof sealant application",
+      title: "Waterproof Sealants",
+      desc: "Premium waterproof sealant application to protect your brickwork from water ingress and weather damage. Long-lasting protection for your home.",
+      detail: "For walls that are exposed or prone to damp, a breathable waterproofing treatment adds an extra layer of protection. It repels driving rain while still letting the wall breathe, helping keep interiors dry and reduce damp problems. We only apply it where it genuinely helps, and always once any pointing repairs are complete.",
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-biocide-wash-aYMtZJ6naDEpeiTNhmkcLi.png",
+      alt: "Before and after biocide wash",
+      title: "Biocide Wash",
+      desc: "Professional biocide cleaning to remove algae, moss, and lichen from brickwork. Restores appearance and prevents biological growth.",
+      detail: "Algae, moss and lichen don't just make brickwork look tired — they hold moisture against the surface and speed up deterioration. Our biocide wash kills off the growth at the root and lifts years of green and black staining, leaving the brickwork clean and fresh. The perfect finishing touch after repointing, or a quick way to revive a property's appearance.",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
@@ -109,102 +156,32 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service Card 1 */}
-            <Card className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-repointing-UtFXzZuTDTVg8QTQ7dxLLE.webp"
-                alt="Before and after repointing"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-bold mb-3">Brick Repointing</h3>
-              <p className="text-foreground/70 mb-4">
-                Restore deteriorated mortar joints on your home with precision. We match original mortar specifications to maintain your property's character and durability.
-              </p>
-              <a href="#" className="text-primary font-semibold hover:underline flex items-center gap-2">
-                Learn More <ChevronRight className="h-4 w-4" />
-              </a>
-            </Card>
-
-            {/* Service Card 2 */}
-            <Card className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-chimney-4x5dqWBKtK7aaSFw7tqJpu.webp"
-                alt="Chimney repointing on rooftop"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-bold mb-3">Chimney Repointing</h3>
-              <p className="text-foreground/70 mb-4">
-                Expert chimney repointing and maintenance for domestic properties. We ensure your chimney is safe, weatherproof, and structurally sound.
-              </p>
-              <a href="#" className="text-primary font-semibold hover:underline flex items-center gap-2">
-                Learn More <ChevronRight className="h-4 w-4" />
-              </a>
-            </Card>
-
-            {/* Service Card 3 */}
-            <Card className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-crack-stitch-LRN8YNXtvr9beUKJM3zpRb.png"
-                alt="Crack stitch repair installation"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-bold mb-3">Crack Stitch Repairs</h3>
-              <p className="text-foreground/70 mb-4">
-                Professional crack stitch repairs to stabilise and repair structural cracks in brickwork. Prevents further deterioration and restores wall integrity.
-              </p>
-              <a href="#" className="text-primary font-semibold hover:underline flex items-center gap-2">
-                Learn More <ChevronRight className="h-4 w-4" />
-              </a>
-            </Card>
-
-            {/* Service Card 4 */}
-            <Card className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-brick-replacement-BDSds2XjF64YwmGvzFUaC9.png"
-                alt="Professional brick replacement"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-bold mb-3">Brick Replacements</h3>
-              <p className="text-foreground/70 mb-4">
-                Expert brick replacement and matching services. We source period-appropriate bricks to seamlessly integrate with your existing brickwork.
-              </p>
-              <a href="#" className="text-primary font-semibold hover:underline flex items-center gap-2">
-                Learn More <ChevronRight className="h-4 w-4" />
-              </a>
-            </Card>
-
-            {/* Service Card 5 */}
-            <Card className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-waterproof-sealant-DjYPoKxfNfr9FVtwCjPL5o.png"
-                alt="Waterproof sealant application"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-bold mb-3">Waterproof Sealants</h3>
-              <p className="text-foreground/70 mb-4">
-                Premium waterproof sealant application to protect your brickwork from water ingress and weather damage. Long-lasting protection for your home.
-              </p>
-              <a href="#" className="text-primary font-semibold hover:underline flex items-center gap-2">
-                Learn More <ChevronRight className="h-4 w-4" />
-              </a>
-            </Card>
-
-            {/* Service Card 6 */}
-            <Card className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663744391217/XmXMrtkLjvbkwNo6exktzp/service-biocide-wash-aYMtZJ6naDEpeiTNhmkcLi.png"
-                alt="Before and after biocide wash"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-2xl font-bold mb-3">Biocide Wash</h3>
-              <p className="text-foreground/70 mb-4">
-                Professional biocide cleaning to remove algae, moss, and lichen from brickwork. Restores appearance and prevents biological growth.
-              </p>
-              <a href="#" className="text-primary font-semibold hover:underline flex items-center gap-2">
-                Learn More <ChevronRight className="h-4 w-4" />
-              </a>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {services.map((service, i) => (
+              <Card key={i} className="p-8 bg-background hover:shadow-lg transition-shadow border-0">
+                <img
+                  src={service.img}
+                  alt={service.alt}
+                  className="w-full h-48 object-cover rounded-lg mb-6"
+                />
+                <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                <p className="text-foreground/70 mb-4">
+                  {service.desc}
+                </p>
+                {openService === i && (
+                  <p className="text-foreground/70 mb-4 border-t border-border pt-4">
+                    {service.detail}
+                  </p>
+                )}
+                <button
+                  onClick={() => setOpenService(openService === i ? null : i)}
+                  className="text-primary font-semibold hover:underline flex items-center gap-2"
+                >
+                  {openService === i ? "Show Less" : "Learn More"}
+                  <ChevronRight className={`h-4 w-4 transition-transform ${openService === i ? "rotate-90" : ""}`} />
+                </button>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -232,24 +209,27 @@ export default function Home() {
 
           {/* Uniform Project Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <img src="/gallery/job-1.webp" alt="Natural stone barn conversion repointing" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <img src="/gallery/job-2.webp" alt="Detached property repointing and brickwork" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <img src="/gallery/job-3.webp" alt="Stone house repointing with scaffolding" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <img src="/gallery/job-4.webp" alt="Apartment block brickwork restoration" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <img src="/gallery/job-5.webp" alt="Semi-detached red brick repointing" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <img src="/gallery/job-6.webp" alt="Garden wall brickwork and repointing" loading="lazy" className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300" />
-            </div>
+            {["job-1","job-2","job-3","job-4","job-5","job-6"].map((job, i) => {
+              const alts = [
+                "Natural stone barn conversion repointing",
+                "Detached property repointing and brickwork",
+                "Stone house repointing with scaffolding",
+                "Apartment block brickwork restoration",
+                "Semi-detached red brick repointing",
+                "Garden wall brickwork and repointing",
+              ];
+              return (
+                <div key={job} className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <img
+                    src={`/gallery/${job}.webp`}
+                    alt={alts[i]}
+                    loading="lazy"
+                    onClick={() => setLightboxImg(`/gallery/${job}.webp`)}
+                    className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -467,6 +447,30 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Gallery Lightbox */}
+      {lightboxImg && (
+        <div
+          onClick={() => setLightboxImg(null)}
+          className="fixed inset-0 z-[70] bg-black/80 flex items-center justify-center p-4 cursor-zoom-out"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            onClick={() => setLightboxImg(null)}
+            className="absolute top-5 right-5 text-white/90 hover:text-white"
+            aria-label="Close image"
+          >
+            <X className="h-8 w-8" />
+          </button>
+          <img
+            src={lightboxImg}
+            alt="Completed project enlarged"
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain"
+          />
+        </div>
+      )}
 
       {/* Floating WhatsApp Button */}
       <a
