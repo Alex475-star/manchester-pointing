@@ -101,7 +101,7 @@ export default function Home() {
                 Expert Domestic Pointing for Your Home
               </h1>
               <p className="text-xl text-foreground/70 leading-relaxed max-w-lg">
-                Professional brick pointing and repointing services for domestic properties across Manchester. We specialise in restoring and maintaining residential brickwork with meticulous attention to detail and traditional craftsmanship.
+                Professional brick pointing and repointing services for domestic properties across Bury, Manchester and the surrounding areas. We specialise in restoring and maintaining residential brickwork with meticulous attention to detail and traditional craftsmanship.
               </p>
               <div className="flex gap-4 pt-4">
                 <a href="#contact">
@@ -152,7 +152,7 @@ export default function Home() {
               Domestic Pointing Excellence
             </h2>
             <p className="text-lg text-foreground/70">
-              Specialising in residential brick pointing, repointing, and masonry restoration across Manchester.
+              Specialising in residential brick pointing, repointing, and masonry restoration across Bury and Greater Manchester.
             </p>
           </div>
 
@@ -255,7 +255,7 @@ export default function Home() {
                 Trusted Domestic Pointing Experts
               </h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                With over 20 years of experience in domestic masonry restoration, Manchester Pointing has earned a reputation for exceptional quality and meticulous attention to detail. We specialise in residential brick pointing and repointing across the Manchester area.
+                With over 20 years of experience in domestic masonry restoration, Manchester Pointing has earned a reputation for exceptional quality and meticulous attention to detail. We specialise in residential brick pointing and repointing across Bury, Ramsbottom, Whitefield, Prestwich and the wider Greater Manchester area.
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3">
@@ -415,7 +415,7 @@ export default function Home() {
             <div>
               <h3 className="font-bold mb-4">Manchester Pointing</h3>
               <p className="text-background/80 text-sm">
-                Professional domestic brick pointing and repointing services across Manchester.
+                Professional domestic brick pointing and repointing services across Bury and Greater Manchester.
               </p>
             </div>
             <div>
