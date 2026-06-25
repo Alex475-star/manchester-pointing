@@ -16,6 +16,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
   const [openService, setOpenService] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [modal, setModal] = useState<"privacy" | "terms" | null>(null);
   const reviewsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -395,24 +396,24 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-background/80">
-                <li><a href="#" className="hover:text-background">Brick Repointing</a></li>
-                <li><a href="#" className="hover:text-background">Chimney Repointing</a></li>
-                <li><a href="#" className="hover:text-background">Brick Repair</a></li>
+                <li><a href="#services" className="hover:text-background">Brick Repointing</a></li>
+                <li><a href="#services" className="hover:text-background">Chimney Repointing</a></li>
+                <li><a href="#services" className="hover:text-background">Brick Repair</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-background/80">
-                <li><a href="#" className="hover:text-background">About Us</a></li>
-                <li><a href="#" className="hover:text-background">Our Work</a></li>
-                <li><a href="#" className="hover:text-background">Contact</a></li>
+                <li><a href="#about" className="hover:text-background">About Us</a></li>
+                <li><a href="#gallery" className="hover:text-background">Our Work</a></li>
+                <li><a href="#contact" className="hover:text-background">Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-background/80">
-                <li><a href="#" className="hover:text-background">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-background">Terms of Service</a></li>
+                <li><button onClick={() => setModal("privacy")} className="hover:text-background text-left">Privacy Policy</button></li>
+                <li><button onClick={() => setModal("terms")} className="hover:text-background text-left">Terms of Service</button></li>
               </ul>
             </div>
           </div>
@@ -421,6 +422,65 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Privacy Policy Modal */}
+      {modal === "privacy" && (
+        <div onClick={() => setModal(null)} className="fixed inset-0 z-[80] bg-black/70 flex items-center justify-center p-4 cursor-pointer">
+          <div onClick={e => e.stopPropagation()} className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 cursor-default">
+            <div className="flex justify-between items-start mb-6">
+              <h2 className="text-2xl font-bold text-foreground">Privacy Policy</h2>
+              <button onClick={() => setModal(null)} className="text-foreground/50 hover:text-foreground ml-4"><X className="h-6 w-6" /></button>
+            </div>
+            <div className="space-y-4 text-foreground/80 text-sm leading-relaxed">
+              <p><strong>Last updated: June 2026</strong></p>
+              <p>Manchester Pointing Services (“we”, “us”, “our”) is committed to protecting your personal data in accordance with UK GDPR and the Data Protection Act 2018.</p>
+              <h3 className="font-bold text-foreground">What data we collect</h3>
+              <p>When you submit an enquiry via our contact form, we collect your name, email address, phone number, and any details you provide about your project.</p>
+              <h3 className="font-bold text-foreground">How we use your data</h3>
+              <p>Your data is used solely to respond to your enquiry, provide a quotation, and carry out any agreed work. We do not use your data for marketing without your consent.</p>
+              <h3 className="font-bold text-foreground">Who we share it with</h3>
+              <p>We do not sell or share your personal data with third parties. Your enquiry data is processed securely via Formspree (our contact form provider).</p>
+              <h3 className="font-bold text-foreground">How long we keep it</h3>
+              <p>Enquiry data is retained for up to 2 years. You may request deletion at any time.</p>
+              <h3 className="font-bold text-foreground">Your rights</h3>
+              <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at info@manchesterpointing.co.uk.</p>
+              <h3 className="font-bold text-foreground">Contact</h3>
+              <p>Manchester Pointing Services, Greater Manchester. Email: info@manchesterpointing.co.uk. Tel: 07376 100 510.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Terms of Service Modal */}
+      {modal === "terms" && (
+        <div onClick={() => setModal(null)} className="fixed inset-0 z-[80] bg-black/70 flex items-center justify-center p-4 cursor-pointer">
+          <div onClick={e => e.stopPropagation()} className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 cursor-default">
+            <div className="flex justify-between items-start mb-6">
+              <h2 className="text-2xl font-bold text-foreground">Terms of Service</h2>
+              <button onClick={() => setModal(null)} className="text-foreground/50 hover:text-foreground ml-4"><X className="h-6 w-6" /></button>
+            </div>
+            <div className="space-y-4 text-foreground/80 text-sm leading-relaxed">
+              <p><strong>Last updated: June 2026</strong></p>
+              <h3 className="font-bold text-foreground">1. Services</h3>
+              <p>Manchester Pointing Services provides domestic brick pointing, repointing, chimney repointing, crack stitch repairs, brick replacement, waterproofing, and biocide cleaning services for residential properties across Greater Manchester.</p>
+              <h3 className="font-bold text-foreground">2. Quotations</h3>
+              <p>All quotations are provided free of charge following an on-site survey. Quotes are valid for 30 days. Prices may be subject to change if the scope of work changes materially after the survey.</p>
+              <h3 className="font-bold text-foreground">3. Payment</h3>
+              <p>Payment terms will be agreed at the time of quotation. We reserve the right to request a deposit before works commence on larger jobs. Final payment is due on completion unless otherwise agreed in writing.</p>
+              <h3 className="font-bold text-foreground">4. Guarantee</h3>
+              <p>All completed works are covered by our workmanship guarantee. The guarantee period will be specified in your quotation. This does not affect your statutory rights.</p>
+              <h3 className="font-bold text-foreground">5. Access and site conditions</h3>
+              <p>The customer is responsible for ensuring safe and reasonable access to the property. We reserve the right to pause or reschedule works if site conditions are unsafe or unsuitable.</p>
+              <h3 className="font-bold text-foreground">6. Liability</h3>
+              <p>Our liability is limited to the value of the works carried out. We are not liable for pre-existing defects, latent structural issues, or damage caused by third parties.</p>
+              <h3 className="font-bold text-foreground">7. Cancellation</h3>
+              <p>Either party may cancel scheduled works with reasonable notice. If works have commenced, payment will be due for the proportion of work completed.</p>
+              <h3 className="font-bold text-foreground">8. Contact</h3>
+              <p>Manchester Pointing Services, Greater Manchester. Email: info@manchesterpointing.co.uk. Tel: 07376 100 510.</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Gallery Lightbox */}
       {lightboxImg && (
