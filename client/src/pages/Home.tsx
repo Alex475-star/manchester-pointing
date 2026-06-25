@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, MapPin, Phone, Mail, Star, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 /**
  * Design Philosophy: Rugged Craftsman
@@ -17,18 +17,6 @@ export default function Home() {
   const [openService, setOpenService] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.defer = true;
-    script.async = true;
-    script.src = "https://cdn.trustindex.io/loader.js?c7dc22d75ff7092bfd1678cad5f";
-    document.head.appendChild(script);
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
 
   const services = [
     {
@@ -306,7 +294,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
           </div>
-          <div className="trustindex-widget" data-widget-id="c7dc22d75ff7092bfd1678cad5f"></div>
+          <iframe src="/reviews.html" style={{ width: "100%", minHeight: "600px", border: "none", overflow: "hidden" }} title="Google Reviews" scrolling="no" />
         </div>
       </section>
 
