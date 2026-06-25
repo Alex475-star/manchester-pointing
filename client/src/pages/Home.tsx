@@ -280,60 +280,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Google Reviews - Trustindex */}
       <section className="py-20">
         <div className="container">
           <div className="text-center mb-16">
             <div className="inline-block border-l-4 border-primary pl-4 mb-4">
               <p className="text-sm font-semibold text-primary uppercase tracking-wider">
-                Client Feedback
+                Google Reviews
               </p>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               What Our Clients Say
             </h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Mitchell",
-                role: "Homeowner, Didsbury",
-                text: "Manchester Pointing transformed our Victorian terrace. The repointing work is immaculate and they were professional throughout. Highly recommended!",
-                rating: 5,
-              },
-              {
-                name: "James Robertson",
-                role: "Homeowner, Stockport",
-                text: "Excellent work on our 1930s semi. They matched the original mortar perfectly and the attention to detail was outstanding.",
-                rating: 5,
-              },
-              {
-                name: "Emma Davies",
-                role: "Homeowner, Altrincham",
-                text: "Professional, reliable, and they completed the work on time and within budget. Our brickwork looks like new again!",
-                rating: 5,
-              },
-            ].map((testimonial, idx) => (
-              <Card key={idx} className="p-8 bg-secondary border-0">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-primary text-primary"
-                    />
-                  ))}
-                </div>
-                <p className="text-foreground/80 mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
-                <div>
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-sm text-foreground/60">{testimonial.role}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <div id="trustindex-reviews"></div>
         </div>
       </section>
 
