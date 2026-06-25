@@ -293,7 +293,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
           </div>
-          <div id="trustindex-reviews"></div>
+          <div class="trustindex-widget" data-widget-id="c7dc22d75ff7092bfd1678cad5f"></div>
         </div>
       </section>
 
