@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, MapPin, Phone, Mail, Star, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /**
  * Design Philosophy: Rugged Craftsman
@@ -16,6 +16,19 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
   const [openService, setOpenService] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.defer = true;
+    script.async = true;
+    script.src = "https://cdn.trustindex.io/loader.js?c7dc22d75ff7092bfd1678cad5f";
+    document.head.appendChild(script);
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
 
   const services = [
     {
@@ -293,7 +306,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
           </div>
-          <div class="trustindex-widget" data-widget-id="c7dc22d75ff7092bfd1678cad5f"></div>
+          <div className="trustindex-widget" data-widget-id="c7dc22d75ff7092bfd1678cad5f"></div>
         </div>
       </section>
 
