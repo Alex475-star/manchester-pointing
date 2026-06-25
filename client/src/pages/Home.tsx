@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, MapPin, Phone, Mail, Star, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /**
  * Design Philosophy: Rugged Craftsman
@@ -16,6 +16,19 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("all");
   const [openService, setOpenService] = useState<number | null>(null);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const reviewsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!reviewsRef.current) return;
+    reviewsRef.current.innerHTML = "";
+    const widgetDiv = document.createElement("div");
+    widgetDiv.className = "trustindex-widget";
+    widgetDiv.setAttribute("data-widget-id", "c7dc22d75ff7092bfd1678cad5f");
+    reviewsRef.current.appendChild(widgetDiv);
+    const script = document.createElement("script");
+    script.src = "https://cdn.trustindex.io/loader.js?c7dc22d75ff7092bfd1678cad5f";
+    reviewsRef.current.appendChild(script);
+  }, []);
 
 
   const services = [
@@ -294,7 +307,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
           </div>
-          <iframe src="/reviews.html" style={{ width: "100%", minHeight: "600px", border: "none", overflow: "hidden" }} title="Google Reviews" scrolling="no" />
+          <div ref={reviewsRef} className="w-full"></div>
         </div>
       </section>
 
